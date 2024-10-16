@@ -1,9 +1,6 @@
 package com.beshoy.mvc.valedationdemo;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class Customer {
     private String firstName;
@@ -16,6 +13,11 @@ public class Customer {
     @Max(value = 10,message = "must be less than or equal to 10")
     private int freePasses;
 
+    @Pattern(regexp ="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",message = "please enter a valid email address")
+    private String email;
+
+    @Pattern(regexp ="^[a-zA-Z0-9]{5}",message="only 5 chars/digits")
+    private String PostalCode;
 
     public String getFirstName() {
         return firstName;
@@ -33,12 +35,27 @@ public class Customer {
         this.lastName = lastName;
     }
 
-
     public int getFreePasses() {
         return freePasses;
     }
 
     public void setFreePasses(int freePasses) {
         this.freePasses = freePasses;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPostalCode() {
+        return PostalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        PostalCode = postalCode;
     }
 }

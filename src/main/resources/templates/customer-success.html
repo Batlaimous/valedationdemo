@@ -10,9 +10,11 @@
   </style>
 </head>
 <body>
-
 The Customer Registration Form for <span class="names" th:text="${customer.firstName + ' ' + customer.lastName}" /> has been successfully submitted.
-
+<br><br>
+Email Address: <span th:text="${customer.email}" />
+<br><br>
+Postal Code: <span th:text="${customer.postalCode}" />
 <br><br>
 Free Passes: <span th:text="${customer.freePasses}" />
 </body>
