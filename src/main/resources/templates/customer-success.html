@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Registration success</title>
+  <style>
+    .names{
+      color: green;
+    }
+  </style>
+</head>
+<body>
+The Customer Registration Form for <span class="names" th:text="${customer.firstName + ' ' + customer.lastName}" /> has been successfully submitted.
+</body>
+</html>
