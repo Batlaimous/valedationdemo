@@ -21,7 +21,6 @@ public class CustomerController {
 
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
         binder.registerCustomEditor(String.class, stringTrimmerEditor);
-
     }
 
     @GetMapping("/")
@@ -35,6 +34,10 @@ public class CustomerController {
             @Valid @ModelAttribute("customer") Customer theCustomer,
             BindingResult theBindingResult) {
         System.out.println("Last Name: |" + theCustomer.getLastName() + "|");
+
+        System.out.println("Binding results: "+theBindingResult.toString());
+        System.out.println("\n\n\n\n\n");
+
         if(theBindingResult.hasErrors()) {
             return "customer-form";
         }
